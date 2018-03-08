@@ -1,31 +1,20 @@
 #include <stdafx.h>
 #include <iostream>
 #include <cstdlib>
-#include <cmath>
+#include<ctime>
 using namespace std;
 
 
 int main() 
 {
 	setlocale(0, "Russian");
-	int number = 0;
-	cout << "Введите двухзначное число: ";
-	cin >> number;
-	int count = log10(number) + 1;
+	srand(time(0));
+	int number = rand() % 99 + 10;
 	
-	while (count != 2) 
-	{
-		cout << "[ОШИБКА!] Введите двухзначное целое число: ";
-		cin >> number;
-		int count = log10(number) + 1;
-		if (count == 2)
-		{
-			int ten = number / 10;
-			cout << "В числе " << number << " единиц " << number << " и десятков " << ten << endl;
-			break;
-		}
-	}
-
+	cout << "Дано число: " << number << endl;
+	int units = number % 10;
+	int ten = number / 10;
+	cout << "Десятков: " << ten << " | Единиц: " << units << endl;
 	system("pause");
 	return 0;
 }
