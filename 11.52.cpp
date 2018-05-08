@@ -24,7 +24,7 @@ int main() {
 		arr[i] = rand() % 10 + 50;
 		cout << " [" << arr[i] << "] ";
 	}
-	cout << "À: ";
+	cout << endl << "À: ";
 	for (int i = 0; i < n; i++) {
 		if ((arr[i] % 10) == 4) {
 			arr[i] /= 2;
